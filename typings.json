@@ -1,4 +1,8 @@
 {
   "name": "ng2",
-  "dependencies": {}
+  "dependencies": {},
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "zone.js": "registry:dt/zone.js#0.0.0+20160316155526"
+  }
 }

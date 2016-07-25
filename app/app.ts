@@ -1,15 +1,33 @@
 import "reflect-metadata";
-import "zone.js";
 import { Component } from '@angular/core';
-import { Router} from '@angular/router';
-
+import {provideRouter, RouterConfig,ROUTER_DIRECTIVES} from '@angular/router';
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 
 
 @Component({
   selector: 'my-app',
-  template: '<h1>for test</h1>'
+  directives:[ROUTER_DIRECTIVES],
+  template: '<h1>for test</h1><router-outlet></router-outlet>'
 })
 class AppComponent { }
 
-bootstrap(AppComponent);
+@Component({
+    
+})
+class ComponentA{
+
+}
+
+@Component({
+
+})
+class ComponentB{
+  
+}
+
+let routerConfig:RouterConfig=[
+   {path:"/componentA",component:ComponentA},
+   {path:"/componentB",component:ComponentB}
+];
+
+bootstrap(AppComponent,[provideRouter(routerConfig)]);
